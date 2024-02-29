@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-// project-imports
-import axios from 'utils/axios';
-
 // types
 import { MenuProps } from 'types/menu';
 
@@ -19,9 +16,134 @@ const initialState: MenuProps = {
 
 // ==============================|| SLICE - MENU ||============================== //
 
+const data: any = {
+  dashboard: {
+    id: "group-dashboard",
+    title: "NAVEGAÇÃO",
+    type: "group",
+    icon: "dashboard",
+    children: [
+      {
+        id: "dashboard",
+        title: "dashboard",
+        type: "collapse",
+        icon: "dashboard",
+        url: "/dashboard/home"
+      },
+      {
+        id: "schedules",
+        title: "agendamentos",
+        type: "collapse",
+        icon: "schedules",
+        target: true,
+        children: [
+          {
+            id: "manage-schedules",
+            title: "Gerenciar Agendamentos",
+            type: "item",
+            breadcrumbs: false
+          },
+          {
+            id: "schedule-report",
+            title: "Relatório de Agendamentos",
+            type: "item",
+            breadcrumbs: false
+          }
+        ]
+      },
+      {
+        id: "customers",
+        title: "Clientes",
+        type: "collapse",
+        icon: "customers",
+        target: true,
+        children: [
+          {
+            id: "manage-customers",
+            title: "Gerenciar Clientes",
+            type: "item",
+            breadcrumbs: false
+          },
+          {
+            id: "customer-report",
+            title: "Relatório de Clientes",
+            type: "item",
+            breadcrumbs: false
+          }
+        ]
+      },
+      {
+        id: "partners",
+        title: "Parceiros",
+        type: "collapse",
+        icon: "partners",
+        target: true,
+        children: [
+          {
+            id: "manage-partners",
+            title: "Gerenciar Parceiros",
+            type: "item",
+            breadcrumbs: false
+          },
+          {
+            id: "partners-report",
+            title: "Relatório de Parceiros",
+            type: "item",
+            breadcrumbs: false
+          }
+        ]
+      },
+      {
+        id: "financial",
+        title: "Financeiro",
+        type: "collapse",
+        icon: "financial",
+        target: true,
+        children: [
+          {
+            id: "financial-extract",
+            title: "Extrato Financeiro",
+            type: "item",
+            breadcrumbs: false
+          },
+          {
+            id: "bank-accounts",
+            title: "Contas Bancárias",
+            type: "item",
+            breadcrumbs: false
+          }
+        ]
+      },
+      {
+        id: "system",
+        title: "Sistema",
+        type: "collapse",
+        icon: "system",
+        target: true,
+        children: [
+          {
+            id: "settings",
+            title: "Configurações",
+            type: "item",
+            breadcrumbs: false
+          },
+          {
+            id: "infra",
+            title: "Infraestrutura",
+            type: "item",
+            breadcrumbs: false
+          }
+        ]
+      },
+
+    ]
+  }
+}
+
+
 export const fetchMenu = createAsyncThunk('', async () => {
-  const response = await axios.get('/api/menu/dashboard');
-  return response.data;
+  const response = data;
+  return response;
 });
 
 const menu = createSlice({

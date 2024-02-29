@@ -65,7 +65,7 @@ const NotificationPage = () => {
   const iconBackColor = theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'secondary.100';
 
   return (
-    <Box sx={{ flexShrink: 0, ml: 0.5 }}>
+    <Box sx={{ flexShrink: 0, ml: 0.5, marginLeft: "auto" }}>
       <IconButton
         color="secondary"
         variant="light"

@@ -138,10 +138,10 @@ const FooterBlock = ({ isFull }: showProps) => {
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} sm={8}>
               <Typography>
-                © Handcrafted by Team{' '}
+                © Desenvolvido por{' '}
                 <Link href="https://themeforest.net/user/phoenixcoded" underline="none">
                   {' '}
-                  Phoenixcoded
+                 Power-Bi Tec 
                 </Link>
               </Typography>
             </Grid>

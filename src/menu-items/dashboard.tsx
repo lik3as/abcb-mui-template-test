@@ -6,12 +6,16 @@ import { useSelector } from 'store';
 
 // type
 import { NavItemType } from 'types/menu';
-import { Home3, HomeTrendUp, Box1 } from 'iconsax-react';
+import { Home3, HomeTrendUp, VideoTime, Profile2User, Cpu, User, DollarSquare } from 'iconsax-react';
 
 const icons = {
   navigation: Home3,
   dashboard: HomeTrendUp,
-  components: Box1
+  schedules: VideoTime,
+  customers: Profile2User,
+  system: Cpu,
+  partners: User,
+  financial: DollarSquare
 };
 
 // ==============================|| MENU ITEMS - API ||============================== //
@@ -23,7 +27,7 @@ export const Menu = () => {
     return SubChildrenLis?.map((subList: NavItemType) => {
       return {
         ...subList,
-        title: <FormattedMessage id={`${subList.title}`} />,
+        title: <FormattedMessage id={`${subList.title}`.charAt(0).toUpperCase() + `${subList.title}`.slice(1)} />,
         // @ts-ignore
         icon: icons[subList.icon]
       };
@@ -33,7 +37,7 @@ export const Menu = () => {
   const itemList = (subList: NavItemType) => {
     let list: NavItemType = {
       ...subList,
-      title: <FormattedMessage id={`${subList.title}`} />,
+      title: <FormattedMessage id={`${subList.title}`.charAt(0).toUpperCase() + `${subList.title}`.slice(1)} />,
       // @ts-ignore
       icon: icons[subList.icon]
     };

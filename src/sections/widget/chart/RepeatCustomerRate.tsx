@@ -29,7 +29,7 @@ const RepeatCustomerRate = () => {
   return (
     <MainCard>
       <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
-        <Typography variant="h5">Repeat customer rate</Typography>
+        <Typography variant="h5">Registro de cliente</Typography>
         <IconButton
           color="secondary"
           id="wallet-button"
@@ -58,9 +58,9 @@ const RepeatCustomerRate = () => {
             horizontal: 'right'
           }}
         >
-          <ListItemButton onClick={handleClose}>Today</ListItemButton>
-          <ListItemButton onClick={handleClose}>Weekly</ListItemButton>
-          <ListItemButton onClick={handleClose}>Monthly</ListItemButton>
+          <ListItemButton onClick={handleClose}>Hoje</ListItemButton>
+          <ListItemButton onClick={handleClose}>Semanalmente</ListItemButton>
+          <ListItemButton onClick={handleClose}>Mensalmente</ListItemButton>
         </Menu>
       </Stack>
       <Stack direction="row" alignItems="center" justifyContent="flex-end" spacing={0.5} sx={{ mt: 1 }}>

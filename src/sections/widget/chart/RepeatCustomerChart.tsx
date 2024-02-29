@@ -106,7 +106,7 @@ const RepeatCustomerChart = () => {
 
   const [series] = useState([
     {
-      name: 'Page Views',
+      name: 'Clientes',
       data: [30, 60, 40, 70, 50, 90, 50, 55, 45, 60, 50, 65]
     }
   ]);

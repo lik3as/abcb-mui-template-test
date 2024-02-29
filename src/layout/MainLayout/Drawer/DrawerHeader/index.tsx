@@ -1,11 +1,12 @@
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import Box from "@mui/system/Box"
 
 // project-imports
 import DrawerHeaderStyled from './DrawerHeaderStyled';
+import logo from "assets/images/logo.webp"
 
-import Logo from 'components/logo';
 import { DRAWER_WIDTH, HEADER_HEIGHT } from 'config';
 import useConfig from 'hooks/useConfig';
 
@@ -37,7 +38,18 @@ const DrawerHeader = ({ open }: Props) => {
         paddingLeft: isHorizontal ? { xs: '24px', lg: '0' } : open ? '24px' : 0
       }}
     >
-      <Logo isIcon={!open} sx={{ width: open ? 'auto' : 52, height: 'auto' }} />
+     <Box
+        component="img"
+        sx={{
+          height: 75,
+          width: 180,
+          maxHeight: { xs: 233, md: 167 },
+          maxWidth: { xs: 350, md: 250 },
+          marginLeft: "20px"
+        }}
+        alt="ABCB"
+        src={logo}
+      /> 
     </DrawerHeaderStyled>
   );
 };
